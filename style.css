@@ -1,0 +1,111 @@
+:root {
+   --playstation-bg-color: rgba(87, 84, 236, .7);
+   --xbox-bg-color: rgba(43, 43, 43, .8);
+   --playstation-btn-hover-color: rgba(87, 84, 236, 1);
+   --xbox-btn-hover-color: rgba(28, 122, 28, 1);
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: sans-serif;
+}
+
+.container {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+}
+
+.box1, .box2 {
+   width: 50%;
+   height: 100%;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   flex: 1;
+   transition: flex 500ms;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   position: relative;
+   overflow: hidden;
+}
+
+img {
+   width: 100%;
+   height: 100%;
+}
+
+.box1 {
+   background-image: url('./Img/playstation.png');
+}
+
+.box2 {
+   background-image: url('./Img/xbox.png');
+}
+
+.box1:hover::before, .box2:hover::before {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 100%;
+}
+
+.box1:hover::before {
+   background: var(--playstation-bg-color);
+}
+
+.box2:hover::before {
+   background: var(--xbox-bg-color);
+}
+
+.box1:hover, .box2:hover {
+   flex: 2;
+}
+
+.content {
+   position: absolute;
+   top: 25%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.br {
+   display: none;
+}
+
+.title {
+   color: #fff;
+   font-size: 4rem;
+   white-space: nowrap;
+}
+
+.btn {
+   color: #fff;
+   background: transparent;
+   border: 3px solid #fff;
+   padding: 15px 60px;
+   font-weight: bold;
+   margin-top: 40px;
+   transition: all 350ms;
+}
+
+.btn1:hover {
+   background: var(--playstation-btn-hover-color);
+   border: 3px solid var(--playstation-btn-hover-color);
+}
+
+.btn2:hover {
+   background: green;
+   border: 3px solid green;
+}
+
+@media (max-width: 1290px) {
+   .title {
+      font-size: 3.5rem;
+   }
+}
